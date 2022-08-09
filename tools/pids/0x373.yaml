@@ -1,0 +1,23 @@
+
+
+
+Frame: 
+ can_id: 0x373
+ comment: "Traction Battery Info"
+
+Signal_1:
+  name: "Battery Cell Maximum Voltage"
+  size: 8
+  start_bit: 0
+  offset: 210
+  scale: 0.1
+  unit: "Volts"
+
+Signal_2:
+  name: "Battery Cell Min Voltage"
+  size: 8
+  start_bit: 8
+  offset: 210
+  scale: 0.1
+  unit: "Volts"
+

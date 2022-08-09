@@ -1,0 +1,30 @@
+VERSION "created by canmatrix"
+
+
+NS_ :
+
+BS_:
+
+BU_: 
+
+
+BO_ 883 0x373: 2 Vector__XXX
+ SG_ Battery_Cell_Maximum_Voltage : 0|8@1- (1,210) [82|337] "Volts" Vector__XXX
+ SG_ Battery_Cell_Min_Voltage : 8|8@1- (1,210) [82|337] "Volts" Vector__XXX
+
+BO_ 838 0x346: 8 Vector__XXX
+ SG_ Range : 56|8@1- (1,0) [-128|127] "Kilometers" Vector__XXX
+
+
+CM_ BO_ 883  "Traction Battery Info";
+CM_ BO_ 838  "Range and Handbrake";
+
+
+
+BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
+
+
+
+BA_ "GenSigStartValue" SG_ 883 Battery_Cell_Maximum_Voltage -128;
+BA_ "GenSigStartValue" SG_ 883 Battery_Cell_Min_Voltage -128;
+

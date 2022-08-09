@@ -1,0 +1,13 @@
+
+
+
+Frame: 
+ can_id: 0x346
+ comment: "Range and Handbrake"
+
+Signal_1:
+  name: "Range"
+  size: 8
+  start_bit: 56
+  unit: "Kilometers"
+
