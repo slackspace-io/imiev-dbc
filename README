@@ -1,0 +1,10 @@
+
+
+
+Placeholder.
+
+Script in tools/ generates a .dbc file from yaml files under tools/pids 
+
+
+.DBC file likely inaccurate, as this is a work in progress. This line will be removed once the first 'real' DBC version is created. 
+

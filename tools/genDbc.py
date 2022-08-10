@@ -28,12 +28,14 @@ def createFrame(canId, comment):
   return frame
 
 
-def testSignal(frame):
-  decoded=frame.decode(bytearray.fromhex("27102E0000000022"))
+def testSignal(testFrame, name):
+  decoded=frame.decode(testFrame)
+#  decoded=frame.decode(bytearray.fromhex("27102E0000000022"))
   #print decoded signals
   for (signal, value) in decoded.items():
-      print("hi")
+      print("Test for PID: %s" % name)
       print (signal + "\t" + hex(value.raw_value) + "\t(" + str(value.phys_value)+ ")")
+      print("")
 
 
 def saveDBC(cm):
@@ -45,28 +47,61 @@ def saveDBC(cm):
 
 yamlDict=loadYamls()
 for yaml in yamlDict:
+  fail = False
   for item in yamlDict[yaml]:
     if "Frame" in item:
       print("Found the frame")
-      canId=yamlDict[yaml][item]["can_id"]
-      comment=yamlDict[yaml][item]["comment"]
-      print(canId,comment,str(hex(canId)))
-      frame=createFrame(canId, comment)
+      frameParamDict={"name": None, "size": 8, "arbitration_id": None, "comment": "None"}
+      for param in yamlDict[yaml][item]:
+        frameParamDict[param]=yamlDict[yaml][item][param]
+      name=frameParamDict["name"]
+      size=frameParamDict["size"]
+      arbitration_id=frameParamDict["arbitration_id"]
+      comment=frameParamDict["comment"]
+#      canId=yamlDict[yaml][item]["can_id"]
+#      comment=yamlDict[yaml][item]["comment"]
+#      print(canId,comment,str(hex(canId)))
+      for k,v in frameParamDict.items():
+        if not v:
+          print("Missing parameter: %s for frame: %s, skipping" % (k, yaml))
+          fail=True
+      if fail:
+        continue
+      frame = canmatrix.Frame(name, arbitration_id=arbitration_id,  comment = comment, size=size)
+      #frame=createFrame(canId, comment)
+      try:
+        testFrame=bytearray.fromhex(yamlDict[yaml][item]["test_frame"])
+        doTest=True
+      except:
+        doTest=False
+        pass
     if "Signal" in item:
+      if fail:
+        continue
       print("Found the signal: %s" % item)
-      signalParamDict={"name": "None", "size": 8, "start_bit": 0, "unit": "None", "offset": 0, "factor": 1.0}
+      signalParamDict={"name": "None", "size": 8, "start_bit": 0, "unit": "None", "offset": 0, "factor": 1.0, "is_float": False, "values": {}, "is_little_endian": True}
       for param in yamlDict[yaml][item]:
         signalParamDict[param]=yamlDict[yaml][item][param]
-
       name=signalParamDict["name"]
       size=signalParamDict["size"]
       start_bit=signalParamDict["start_bit"]
       unit=signalParamDict["unit"]
-      factor=signalParamDict["factor"]
+      factor="{:.{i}f}".format(signalParamDict["factor"], i=len(str(signalParamDict["factor"]).split('.')[1])) 
+      is_float=signalParamDict["is_float"]
       offset=signalParamDict["offset"]
-
-      signal = canmatrix.Signal(name, size = size,  start_bit = start_bit, unit=unit, factor=factor, offset=offset)
+      values=signalParamDict["values"]
+      is_little_endian=signalParamDict["is_little_endian"]
+      signal = canmatrix.Signal(name, size = size,  start_bit = start_bit, unit=unit, factor=factor, offset=offset, values=values, is_little_endian=is_little_endian)
       frame.add_signal(signal)
+  if fail:
+    continue
   cm.add_frame(frame)
+  if doTest:
+    testSignal(testFrame, name)
   signalParamDict.clear()
+
+
+
+
+
 saveDBC(cm)

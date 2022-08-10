@@ -1,0 +1,17 @@
+
+
+
+Frame: 
+ arbitration_id: 0x210
+ name: "0x210"
+ comment: "Accelerator Pedal Percentage"
+ size: 7
+ test_frame: "00000000800000"
+
+Signal_1:
+  name: "Accelerator Pedal Percentage"
+  size: 8
+  start_bit: 8
+  factor: .4
+  unit: "Percentage"
+  

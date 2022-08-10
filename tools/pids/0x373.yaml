@@ -2,15 +2,17 @@
 
 
 Frame: 
- can_id: 0x373
+ name: "0x373"
+ arbitration_id: 0x373
  comment: "Traction Battery Info"
+ test_frame: "B6B47F280D720016"
 
 Signal_1:
   name: "Battery Cell Maximum Voltage"
   size: 8
   start_bit: 0
   offset: 210
-  scale: 0.1
+  factor: .01
   unit: "Volts"
 
 Signal_2:
@@ -18,6 +20,21 @@ Signal_2:
   size: 8
   start_bit: 8
   offset: 210
-  scale: 0.1
-  unit: "Volts"
+  factor: .01
 
+Signal_3:
+  name: "Battery Pack Amps"
+  size: 16
+  start_bit: 16
+  factor: .01
+  offset: -32768
+  unit: "Amps"
+  is_little_endian: False
+
+Signal_4:
+  name: "Battery Pack Voltage"
+  size: 16
+  start_bit: 32
+  factor: .01
+  unit: "Volts"
+  is_little_endian: False

@@ -1,0 +1,16 @@
+
+
+
+Frame: 
+ name: "0x215"
+ arbitration_id: 0x215
+ comment: "Vehicle Speed"
+ test_frame: "130A2BE32C4D0000"
+
+Signal_1:
+  name: "Vehicle Speed"
+  size: 16
+  start_bit: 0
+  factor: 0.0078125
+  unit: "km/h"
+  is_little_endian: False
