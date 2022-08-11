@@ -1,0 +1,19 @@
+
+
+
+Frame: 
+ arbitration_id: 0x285
+ name: "0x285"
+ comment: "Acceleration"
+ size: 8
+ test_frame: 
+ - "0BC814008EFE0E10"
+ - "0BBA14008EFE0E10"
+
+Signal_1:
+  name: "Acceleration"
+  size: 14
+  start_bit: 0
+  offset: -1136
+  factor: 1.51
+  is_little_endian: False 

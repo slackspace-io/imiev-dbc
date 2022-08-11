@@ -1,0 +1,27 @@
+
+
+
+Frame: 
+ arbitration_id: 0x239
+ name: "0x239"
+ comment: "Motor RPM and Temp"
+ size: 8
+ test_frame: 
+ - "5859545F00002BD8"
+
+Signal_1:
+  name: "Motor Temp"
+  size: 8
+  start_bit: 24
+  offset: -40
+  is_little_endian: False
+  unit: "C"
+  
+Signal_2:
+  name: "Motor RPM"
+  size: 16
+  start_bit: 48
+  offset: -10000
+  is_little_endian: False
+  unit: "rpm"
+  

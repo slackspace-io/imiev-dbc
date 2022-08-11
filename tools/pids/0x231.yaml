@@ -1,0 +1,19 @@
+
+
+
+Frame: 
+ arbitration_id: 0x231
+ name: "0x231"
+ comment: "Brake Pedal Switch Sensor"
+ size: 8
+ test_frame: 
+ - "0000000000000000"
+ - "0000000002000000"
+
+Signal_1:
+  name: "Brake Pedal Switch Sensor"
+  size: 8
+  start_bit: 32
+  unit: "Status"
+  values: {2: "Pressed", 0: "Released"}
+  
