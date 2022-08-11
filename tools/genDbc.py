@@ -1,5 +1,6 @@
 import canmatrix.formats
 import os
+import sys
 import yaml
 cm = canmatrix.CanMatrix()
 
@@ -7,6 +8,11 @@ cm = canmatrix.CanMatrix()
 # create frame Node604
 #
 
+#for debug -- make proper later :)
+try:
+  single=sys.argv[1]
+except:
+  single=None
 
 def loadYamls():
   yamlDict=dict()
@@ -15,7 +21,7 @@ def loadYamls():
       pid=filename.name.strip('.yaml')
       with open(filename.path, 'r') as stream:
         yamlDict[pid]=yaml.FullLoader(stream).get_data()
-  print(yamlDict)
+  #print(yamlDict)
   return yamlDict
 
 
@@ -29,6 +35,10 @@ def createFrame(canId, comment):
 
 
 def testSignal(testFrame, name):
+  i=0
+  for f in testFrame:
+    print("%s: %s" % (i,hex(f)))
+    i+=1
   decoded=frame.decode(testFrame)
 #  decoded=frame.decode(bytearray.fromhex("27102E0000000022"))
   #print decoded signals
@@ -47,6 +57,9 @@ def saveDBC(cm):
 
 yamlDict=loadYamls()
 for yaml in yamlDict:
+  if single:
+    if single not in yaml:
+      continue
   fail = False
   for item in yamlDict[yaml]:
     if "Frame" in item:
@@ -79,19 +92,24 @@ for yaml in yamlDict:
       if fail:
         continue
       print("Found the signal: %s" % item)
-      signalParamDict={"name": "None", "size": 8, "start_bit": 0, "unit": "None", "offset": 0, "factor": 1.0, "is_float": False, "values": {}, "is_little_endian": True}
+      signalParamDict={"name": "None", "size": 8, "start_bit": 0, "unit": "None", "offset": 0, "factor": 1.0, "is_float": False, "values": {}, "is_little_endian": True, "is_signed": True}
       for param in yamlDict[yaml][item]:
         signalParamDict[param]=yamlDict[yaml][item][param]
       name=signalParamDict["name"]
       size=signalParamDict["size"]
       start_bit=signalParamDict["start_bit"]
       unit=signalParamDict["unit"]
-      factor="{:.{i}f}".format(signalParamDict["factor"], i=len(str(signalParamDict["factor"]).split('.')[1])) 
+      factor="{:.{i}f}".format(signalParamDict["factor"], i=len(str(signalParamDict["factor"]).split('.')[1]))
+      print(factor)
       is_float=signalParamDict["is_float"]
       offset=signalParamDict["offset"]
+      print(offset)
       values=signalParamDict["values"]
+      is_signed=signalParamDict["is_signed"]
+      print(is_signed)
       is_little_endian=signalParamDict["is_little_endian"]
-      signal = canmatrix.Signal(name, size = size,  start_bit = start_bit, unit=unit, factor=factor, offset=offset, values=values, is_little_endian=is_little_endian)
+      print(start_bit)
+      signal = canmatrix.Signal(name, size = size,  start_bit = start_bit, unit=unit, factor=factor, offset=offset, values=values, is_little_endian=is_little_endian, is_signed=is_signed)
       frame.add_signal(signal)
   if fail:
     continue

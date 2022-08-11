@@ -2,8 +2,8 @@
 
 
 Frame: 
- arbitration_id: 0x101
- name: "0x101"
+ arbitration_id: 0x012
+ name: "0x012"
  comment: "Key Status"
  size: 1
  test_frame: "04"

@@ -12,4 +12,4 @@ Signal_1:
   size: 8
   start_bit: 56
   unit: "Kilometers"
-
+  is_signed: False

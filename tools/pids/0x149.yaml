@@ -1,0 +1,16 @@
+
+
+Frame: 
+ arbitration_id: 0x149
+ name: "0x149"
+ comment: "Rotation ESC"
+ size: 8
+ test_frame: EB7F00FF0E8104D8
+
+Signal_1:
+  name: "Rotation ESC"
+  size: 16
+  start_bit: 32
+  offset: -1000
+  factor: 0.030363757818667642
+  is_signed: False
