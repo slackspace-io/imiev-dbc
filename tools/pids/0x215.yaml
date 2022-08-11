@@ -5,7 +5,8 @@ Frame:
  name: "0x215"
  arbitration_id: 0x215
  comment: "Vehicle Speed"
- test_frame: "130A2BE32C4D0000"
+ test_frame: 
+ - "130A2BE32C4D0000"
 
 Signal_1:
   name: "Vehicle Speed"

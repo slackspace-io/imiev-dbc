@@ -5,7 +5,9 @@ Frame:
  name: "0x373"
  arbitration_id: 0x373
  comment: "Traction Battery Info"
- test_frame: "B6B47F280D720016"
+ test_frame: 
+  - "B6B47F280D720016"
+  - "BEBC784E0DB30016"
 
 Signal_1:
   name: "Battery Cell Maximum Voltage"

@@ -6,11 +6,13 @@ Frame:
  name: "0x210"
  comment: "Accelerator Pedal Percentage"
  size: 7
- test_frame: "0000F600800000"
+ test_frame: 
+ - "00002A80000000"
+
 
 Signal_1:
   name: "Accelerator Pedal Percentage"
-  size: 8
+  size: 7
   start_bit: 16
   factor: .4
   unit: "Percentage"

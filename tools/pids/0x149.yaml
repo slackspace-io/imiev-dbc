@@ -5,7 +5,8 @@ Frame:
  name: "0x149"
  comment: "Rotation ESC"
  size: 8
- test_frame: EB7F00FF0E8104D8
+ test_frame: 
+ - "EB7F00FF0E8104D8"
 
 Signal_1:
   name: "Rotation ESC"

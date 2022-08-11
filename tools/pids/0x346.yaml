@@ -5,7 +5,8 @@ Frame:
  name: "0x346"
  arbitration_id: 0x346
  comment: "Range and Handbrake"
- test_frame: "27102E0000000022"
+ test_frame: 
+ - "27102E0000000022"
 
 Signal_1:
   name: "Range"

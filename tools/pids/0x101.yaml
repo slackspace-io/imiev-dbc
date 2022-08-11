@@ -6,7 +6,8 @@ Frame:
  name: "0x101"
  comment: "Key Status"
  size: 1
- test_frame: "04"
+ test_frame: 
+ - "04"
 
 Signal_1:
   name: "Key Status"

@@ -9,27 +9,35 @@ BU_:
 
 
 BO_ 257 0x101: 1 Vector__XXX
- SG_ Range : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
+ SG_ Key_Status : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
+
+BO_ 329 0x149: 6 Vector__XXX
+ SG_ Rotation_ESC : 32|16@1+ (0.030363757818667642,-1000) [-1000.000000000000000000|989.888868646383918470] "None" Vector__XXX
 
 BO_ 883 0x373: 6 Vector__XXX
- SG_ Battery_Cell_Maximum_Voltage : 0|8@1- (0.01,210) [208.72|211.27] "Volts" Vector__XXX
- SG_ Battery_Cell_Min_Voltage : 8|8@1- (0.01,210) [208.72|211.27] "None" Vector__XXX
- SG_ Battery_Pack_Amps : 23|16@0- (0.01,-32768) [-33095.68|-32440.33] "Amps" Vector__XXX
- SG_ Battery_Pack_Voltage : 39|16@0- (0.01,0) [-327.68|327.67] "Volts" Vector__XXX
+ SG_ Battery_Cell_Maximum_Voltage : 1|7@1+ (0.01,3) [3.00|4.27] "Volts" Vector__XXX
+ SG_ Battery_Cell_Min_Voltage : 9|7@1+ (0.01,3) [3.00|4.27] "None" Vector__XXX
+ SG_ Battery_Pack_Amps : 14|14@1+ (0.08,-694) [-694.00|616.64] "Amps" Vector__XXX
+ SG_ Battery_Pack_Voltage : 39|16@0+ (0.1,0) [0|6553.5] "Volts" Vector__XXX
 
 BO_ 838 0x346: 8 Vector__XXX
- SG_ Range : 56|8@1- (1,0) [-128|127] "Kilometers" Vector__XXX
+ SG_ Range : 56|8@1+ (1,0) [0|255] "Kilometers" Vector__XXX
+
+BO_ 18 0x012: 1 Vector__XXX
+ SG_ Key_Status : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
 
 BO_ 533 0x215: 2 Vector__XXX
  SG_ Vehicle_Speed : 7|16@0- (0.0078125,0) [-256.0000000|255.9921875] "km/h" Vector__XXX
 
-BO_ 528 0x210: 2 Vector__XXX
- SG_ Accelerator_Pedal_Percentage : 8|8@1- (0.4,0) [-51.2|50.8] "Percentage" Vector__XXX
+BO_ 528 0x210: 3 Vector__XXX
+ SG_ Accelerator_Pedal_Percentage : 16|7@1+ (0.4,0) [0|50.8] "Percentage" Vector__XXX
 
 
 CM_ BO_ 257  "Key Status";
+CM_ BO_ 329  "Rotation ESC";
 CM_ BO_ 883  "Traction Battery Info";
 CM_ BO_ 838  "Range and Handbrake";
+CM_ BO_ 18  "Key Status";
 CM_ BO_ 533  "Vehicle Speed";
 CM_ BO_ 528  "Accelerator Pedal Percentage";
 
@@ -39,8 +47,8 @@ BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
 
 
 
-BA_ "GenSigStartValue" SG_ 883 Battery_Cell_Maximum_Voltage -128;
-BA_ "GenSigStartValue" SG_ 883 Battery_Cell_Min_Voltage -128;
-BA_ "GenSigStartValue" SG_ 883 Battery_Pack_Amps -32768;
+BA_ "GenSigStartValue" SG_ 329 Rotation_ESC 32933;
+BA_ "GenSigStartValue" SG_ 883 Battery_Pack_Amps 8675;
 
-VAL_ 257 Range 0 "Off" 4 "On";
+VAL_ 257 Key_Status 0 "Off" 4 "On";
+VAL_ 18 Key_Status 0 "Off" 4 "On";

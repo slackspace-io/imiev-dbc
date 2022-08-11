@@ -83,7 +83,7 @@ for yaml in yamlDict:
       frame = canmatrix.Frame(name, arbitration_id=arbitration_id,  comment = comment, size=size)
       #frame=createFrame(canId, comment)
       try:
-        testFrame=bytearray.fromhex(yamlDict[yaml][item]["test_frame"])
+        testFrameList=yamlDict[yaml][item]["test_frame"]
         doTest=True
       except:
         doTest=False
@@ -115,7 +115,9 @@ for yaml in yamlDict:
     continue
   cm.add_frame(frame)
   if doTest:
-    testSignal(testFrame, name)
+    for testFrameString in testFrameList:
+      testFrame=bytearray.fromhex(testFrameString)
+      testSignal(testFrame, name)
   signalParamDict.clear()
 
 

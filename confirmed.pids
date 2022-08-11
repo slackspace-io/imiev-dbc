@@ -1,11 +1,31 @@
 0x101
+
   00    <0x101>
   Key Status
-  Range: Off
+  Key_Status: Off
+  
   
   04    <0x101>
   Key Status
-  Range: On
+  Key_Status: On
+
+0x149
+  No idea if this is accurate, not even sure what it means :)
+
+  05 80 00 FF C9 80 00 D2    <0x149>
+  Rotation ESC
+  Rotation_ESC: 1.06273None
+
+
+0x210
+  00 00 7E 00 80 00 00    <0x210>
+  Accelerator Pedal Percentage
+  Accelerator_Pedal_Percentage: 50.4Percentage
+  
+  
+  00 00 00 00 80 00 00    <0x210>
+  Accelerator Pedal Percentage
+  Accelerator_Pedal_Percentage: 0Percentage
 
 
 0x215
@@ -16,4 +36,34 @@
   29 74 C9 A4 CA EB 00 00    <0x215>
   Vehicle Speed
   Vehicle_Speed: 82.9063km/h
+
+
+
+0x346
+  28 98 46 20 00 00 00 2C    <0x346>
+  Range and Handbrake
+  Range: 44Kilometers
+
+  27 10 46 00 00 00 00 38    <0x346>
+  Range and Handbrake
+  Range: 56Kilometers
+
+
+
+0x373
+  ****Very different math than the github page needs others to verify on more data*** 
+  C3 C3 7F B8 0D E9 00 14    <0x373>
+  Traction Battery Info
+  Battery_Cell_Maximum_Voltage: 3.97Volts
+  Battery_Cell_Min_Voltage: 3.97None
+  Battery_Pack_Amps: 2.24Amps
+  Battery_Pack_Voltage: 356.1Volts
+
+
+  BB B8 7F 2B 0D 9A 00 16    <0x373>
+  Traction Battery Info
+  Battery_Cell_Maximum_Voltage: 3.93Volts
+  Battery_Cell_Min_Voltage: 3.92None
+  Battery_Pack_Amps: 247.92Amps
+  Battery_Pack_Voltage: 348.2Volts
 
