@@ -8,8 +8,18 @@ BS_:
 BU_: 
 
 
+BO_ 561 0x231: 5 Vector__XXX
+ SG_ Brake_Pedal_Switch_Sensor : 32|8@1- (1,0) [-128|127] "Status" Vector__XXX
+
 BO_ 257 0x101: 1 Vector__XXX
  SG_ Key_Status : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
+
+BO_ 645 0x285: 2 Vector__XXX
+ SG_ Acceleration : 7|14@0- (1.51,-1136) [-13505.92|11232.41] "None" Vector__XXX
+
+BO_ 569 0x239: 8 Vector__XXX
+ SG_ Motor_Temp : 31|8@0- (1,-40) [-168|87] "C" Vector__XXX
+ SG_ Motor_RPM : 55|16@0- (1,-10000) [-42768|22767] "rpm" Vector__XXX
 
 BO_ 329 0x149: 6 Vector__XXX
  SG_ Rotation_ESC : 32|16@1+ (0.030363757818667642,-1000) [-1000.000000000000000000|989.888868646383918470] "None" Vector__XXX
@@ -33,7 +43,10 @@ BO_ 528 0x210: 3 Vector__XXX
  SG_ Accelerator_Pedal_Percentage : 16|7@1+ (0.4,0) [0|50.8] "Percentage" Vector__XXX
 
 
+CM_ BO_ 561  "Brake Pedal Switch Sensor";
 CM_ BO_ 257  "Key Status";
+CM_ BO_ 645  "Acceleration";
+CM_ BO_ 569  "Motor RPM and Temp";
 CM_ BO_ 329  "Rotation ESC";
 CM_ BO_ 883  "Traction Battery Info";
 CM_ BO_ 838  "Range and Handbrake";
@@ -47,8 +60,12 @@ BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
 
 
 
+BA_ "GenSigStartValue" SG_ 645 Acceleration 752;
+BA_ "GenSigStartValue" SG_ 569 Motor_Temp 40;
+BA_ "GenSigStartValue" SG_ 569 Motor_RPM 10000;
 BA_ "GenSigStartValue" SG_ 329 Rotation_ESC 32933;
 BA_ "GenSigStartValue" SG_ 883 Battery_Pack_Amps 8675;
 
+VAL_ 561 Brake_Pedal_Switch_Sensor 0 "Released" 2 "Pressed";
 VAL_ 257 Key_Status 0 "Off" 4 "On";
 VAL_ 18 Key_Status 0 "Off" 4 "On";
