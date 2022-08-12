@@ -14,10 +14,13 @@ BO_ 561 0x231: 5 Vector__XXX
 BO_ 257 0x101: 1 Vector__XXX
  SG_ Key_Status : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
 
+BO_ 1048 0x418: 1 Vector__XXX
+ SG_ Gear_Shift_Selection : 0|8@1+ (1,0) [0|255] "None" Vector__XXX
+
 BO_ 645 0x285: 2 Vector__XXX
  SG_ Acceleration : 7|14@0- (1.51,-1136) [-13505.92|11232.41] "None" Vector__XXX
 
-BO_ 569 0x239: 8 Vector__XXX
+BO_ 664 0x298: 8 Vector__XXX
  SG_ Motor_Temp : 31|8@0- (1,-40) [-168|87] "C" Vector__XXX
  SG_ Motor_RPM : 55|16@0- (1,-10000) [-42768|22767] "rpm" Vector__XXX
 
@@ -33,8 +36,35 @@ BO_ 883 0x373: 6 Vector__XXX
 BO_ 838 0x346: 8 Vector__XXX
  SG_ Range : 56|8@1+ (1,0) [0|255] "Kilometers" Vector__XXX
 
+BO_ 1060 0x424: 7 Vector__XXX
+ SG_ Automatic_Light : 2|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Fog_Lights : 3|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Rear_Fog_Light : 4|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Hazard_Lights : 8|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Right_Blinker : 9|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ High_Beams : 10|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Rear_Wiper : 11|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Night_Headlights : 12|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Sidelights : 13|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Driver_Door_Unlocked0 : 17|1@1+ (1,0) [0|1] "None" Vector__XXX
+ SG_ Driver_Door_Unlocked1 : 51|1@1+ (1,0) [0|1] "None" Vector__XXX
+
+BO_ 1687 0x697: 3 Vector__XXX
+ SG_ Chademo_Connected : 0|8@1- (1,0) [-128|127] "None" Vector__XXX
+ SG_ Chademo_Charge__ : 8|8@1- (1,0) [-128|127] "Percentage" Vector__XXX
+ SG_ Chademo_Current : 16|8@1- (1,0) [-128|127] "AMPs" Vector__XXX
+
+BO_ 1042 0x412: 5 Vector__XXX
+ SG_ Key_Status : 0|8@1+ (1,0) [0|255] "None" Vector__XXX
+ SG_ Speed : 8|8@1- (1,0) [-128|127] "Km/h" Vector__XXX
+ SG_ Odometer : 23|24@0- (1,0) [-8388608|8388607] "km" Vector__XXX
+
 BO_ 18 0x012: 1 Vector__XXX
  SG_ Key_Status : 0|8@1- (1,0) [-128|127] "Status" Vector__XXX
+
+BO_ 1686 0x696: 8 Vector__XXX
+ SG_ Motor_Current_Amps : 23|16@0+ (0.05,-25) [-25.00|3251.75] "Amps" Vector__XXX
+ SG_ Regen_Amps : 55|15@0- (0.11,-553) [-2355.24|1249.13] "Amps" Vector__XXX
 
 BO_ 533 0x215: 2 Vector__XXX
  SG_ Vehicle_Speed : 7|16@0- (0.0078125,0) [-256.0000000|255.9921875] "km/h" Vector__XXX
@@ -42,17 +72,64 @@ BO_ 533 0x215: 2 Vector__XXX
 BO_ 528 0x210: 3 Vector__XXX
  SG_ Accelerator_Pedal_Percentage : 16|7@1+ (0.4,0) [0|50.8] "Percentage" Vector__XXX
 
+BO_ 512 0x200: 5 Vector__XXX
+ SG_ Wheel_Rotation_One : 8|12@0+ (0.34,-1209) [-1209.00|183.30] "None" Vector__XXX
+ SG_ Wheel_Rotation_Two : 25|14@1+ (0.01,-71) [-71.00|92.83] "None" Vector__XXX
+
+BO_ 884 0x374: 7 Vector__XXX
+ SG_ Battery_SOC : 0|15@1+ (0.25,-1056) [-1056.00|7135.75] "%" Vector__XXX
+ SG_ Batter_Max_Temp : 32|8@1- (1,-50) [-178|77] "C" Vector__XXX
+ SG_ Battery_Min_Temp : 40|8@1- (1,-50) [-178|77] "C" Vector__XXX
+ SG_ Battery_100__Capacity__Ah_ : 48|8@1- (0.5,0) [-64|63.5] "Ah" Vector__XXX
+
+BO_ 900 0x384: 5 Vector__XXX
+ SG_ AC__A_ : 7|16@0+ (0.001,0) [0.000|65.535] "Amps" Vector__XXX
+ SG_ Charging_12v_Battery__A_ : 24|8@1+ (0.01,0) [0.00|2.55] "Amps" Vector__XXX
+ SG_ Heating__A_ : 32|8@1+ (0.1,0) [0|25.5] "Amps" Vector__XXX
+
+BO_ 520 0x208: 8 Vector__XXX
+ SG_ Brake_Pedal_Position : 23|12@0+ (0.5,-766) [-766|1281.5] "None" Vector__XXX
+ SG_ Wheel_Rotation_One : 32|16@1+ (0.01,-27) [-27.00|628.35] "None" Vector__XXX
+ SG_ Wheel_Rotation_Two : 48|16@1+ (0.01,-27) [-27.00|628.35] "None" Vector__XXX
+
+BO_ 932 0x3A4: 2 Vector__XXX
+ SG_ Heating_Level : 7|3@0+ (1,0) [0|7] "Status" Vector__XXX
+ SG_ MAX_Button : 2|1@0+ (1,0) [0|1] "Status" Vector__XXX
+ SG_ Recirculation_Button : 1|1@0+ (1,0) [0|1] "Status" Vector__XXX
+ SG_ AC_Button : 0|1@0+ (1,0) [0|1] "Status" Vector__XXX
+ SG_ Fan_Speed : 15|3@0+ (12.5,0) [0|87.5] "Fan Speed" Vector__XXX
+ SG_ Vent_Direction : 11|4@0+ (1,0) [0|15] "Vent Direction" Vector__XXX
+
+BO_ 905 0x389: 7 Vector__XXX
+ SG_ Charger_DC_Voltage_V_ : 7|8@0+ (2.01,0) [0.00|512.55] "Volts" Vector__XXX
+ SG_ Charger_Input_Voltage_V_ : 8|8@1+ (1,0) [0|255] "Volts" Vector__XXX
+ SG_ Charger_Input_Current_A_ : 16|8@1+ (0.1,0) [0|25.5] "Amps" Vector__XXX
+ SG_ Charger_Temp_D3 : 24|8@1+ (1,-50) [-50|205] "C" Vector__XXX
+ SG_ Charger_Temp_D4 : 32|8@1+ (1,-50) [-50|205] "C" Vector__XXX
+ SG_ Charging_Input_Current_A_ : 48|8@1+ (0.1,0) [0|25.5] "Amps" Vector__XXX
+
 
 CM_ BO_ 561  "Brake Pedal Switch Sensor";
 CM_ BO_ 257  "Key Status";
+CM_ BO_ 1048  "Gear Shift Selection";
 CM_ BO_ 645  "Acceleration";
-CM_ BO_ 569  "Motor RPM and Temp";
+CM_ BO_ 664  "Motor RPM and Temp";
 CM_ BO_ 329  "Rotation ESC";
 CM_ BO_ 883  "Traction Battery Info";
 CM_ BO_ 838  "Range and Handbrake";
+CM_ BO_ 1060  "Car Lights and Locks Status";
+CM_ BO_ 1687  "Chademo";
+CM_ BO_ 1042  "Speed + Odometer";
 CM_ BO_ 18  "Key Status";
+CM_ BO_ 1686  "Motor Current and Regen Amps";
 CM_ BO_ 533  "Vehicle Speed";
 CM_ BO_ 528  "Accelerator Pedal Percentage";
+CM_ BO_ 512  "Wheel Rotation";
+CM_ BO_ 884  "Battery SOC";
+CM_ BO_ 900  "Heating and Cooling";
+CM_ BO_ 520  "Wheel Rotation, Brake Position";
+CM_ BO_ 932  "Climate Console";
+CM_ BO_ 905  "Charger";
 
 
 
@@ -61,11 +138,28 @@ BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 100000000000;
 
 
 BA_ "GenSigStartValue" SG_ 645 Acceleration 752;
-BA_ "GenSigStartValue" SG_ 569 Motor_Temp 40;
-BA_ "GenSigStartValue" SG_ 569 Motor_RPM 10000;
+BA_ "GenSigStartValue" SG_ 664 Motor_Temp 40;
+BA_ "GenSigStartValue" SG_ 664 Motor_RPM 10000;
 BA_ "GenSigStartValue" SG_ 329 Rotation_ESC 32933;
 BA_ "GenSigStartValue" SG_ 883 Battery_Pack_Amps 8675;
+BA_ "GenSigStartValue" SG_ 1686 Motor_Current_Amps 500;
+BA_ "GenSigStartValue" SG_ 1686 Regen_Amps 5027;
+BA_ "GenSigStartValue" SG_ 512 Wheel_Rotation_One 3555;
+BA_ "GenSigStartValue" SG_ 512 Wheel_Rotation_Two 7100;
+BA_ "GenSigStartValue" SG_ 884 Battery_SOC 4224;
+BA_ "GenSigStartValue" SG_ 884 Batter_Max_Temp 50;
+BA_ "GenSigStartValue" SG_ 884 Battery_Min_Temp 50;
+BA_ "GenSigStartValue" SG_ 520 Brake_Pedal_Position 1532;
+BA_ "GenSigStartValue" SG_ 520 Wheel_Rotation_One 2700;
+BA_ "GenSigStartValue" SG_ 520 Wheel_Rotation_Two 2700;
+BA_ "GenSigStartValue" SG_ 905 Charger_Temp_D3 50;
+BA_ "GenSigStartValue" SG_ 905 Charger_Temp_D4 50;
 
 VAL_ 561 Brake_Pedal_Switch_Sensor 0 "Released" 2 "Pressed";
 VAL_ 257 Key_Status 0 "Off" 4 "On";
 VAL_ 18 Key_Status 0 "Off" 4 "On";
+VAL_ 932 Heating_Level 0 "Cooling" 1 "Cooling" 2 "Cooling" 3 "Cooling" 4 "Cooling" 5 "Cooling" 6 "Cooling" 7 "Off" 8 "Heat" 9 "Heat" 10 "Heat" 11 "Heat" 12 "Heat" 13 "Heat" 14 "Heat" 15 "Heat";
+VAL_ 932 MAX_Button 0 "MAX Off" 1 "MAX On";
+VAL_ 932 Recirculation_Button 0 "Recirculation Off" 1 "Recirculation On";
+VAL_ 932 AC_Button 0 "A/C Off" 1 "A/C On";
+VAL_ 932 Vent_Direction 1 "Face" 2 "Face" 3 "Legs + Face" 4 "Legs" 5 "Legs" 6 "Legs + Windshield" 7 "Windshield" 8 "Windshield" 9 "Windshield";

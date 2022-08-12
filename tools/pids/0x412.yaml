@@ -1,0 +1,30 @@
+
+
+
+Frame: 
+ arbitration_id: 0x412
+ name: "0x412"
+ comment: "Speed + Odometer"
+ size: 8
+ test_frame: 
+ - "FE00017227002106"
+
+Signal_1:
+  name: "Key Status"
+  size: 8
+  start_bit: 0
+  status: {254: "On", 0: "Off"}
+  is_signed: False
+
+Signal_2:
+  name: "Speed"
+  size: 8
+  start_bit: 8
+  unit: "Km/h"
+
+Signal_3:
+  name: "Odometer"
+  size: 24
+  start_bit: 16
+  unit: "km"
+  is_little_endian: False 

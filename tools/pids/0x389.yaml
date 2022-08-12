@@ -1,0 +1,58 @@
+
+
+
+Frame: 
+ name: "0x389"
+ arbitration_id: 0x389
+ comment: "Charger"
+ test_frame: 
+  - "B1ED004040CA0102"
+
+Signal_1:
+  name: "Charger DC Voltage(V)"
+  size: 8
+  start_bit: 0
+  factor: 2.01
+  unit: "Volts"
+  is_signed: False
+  is_little_endian: False
+
+Signal_2:
+  name: "Charger Input Voltage(V)"
+  size: 8
+  start_bit: 8
+  unit: "Volts"
+  is_signed: False
+
+Signal_3:
+  name: "Charger Input Current(A)"
+  size: 8
+  start_bit: 16
+  factor: .1
+  unit: "Amps"
+  is_signed: False
+
+Signal_4:
+  name: "Charger Temp D3"
+  size: 8
+  start_bit: 24
+  offset: -50
+  unit: "C"
+  is_signed: False
+
+Signal_5:
+  name: "Charger Temp D4"
+  size: 8
+  start_bit: 32
+  offset: -50
+  unit: "C"
+  is_signed: False
+
+Signal_6:
+  name: "Charging Input Current(A)"
+  size: 8
+  start_bit: 48
+  factor: .1
+  unit: "Amps"
+  is_signed: False
+

@@ -1,0 +1,39 @@
+
+
+
+Frame: 
+ arbitration_id: 0x208
+ name: "0x208"
+ comment: "Wheel Rotation, Brake Position"
+ size: 8
+ test_frame: 
+  - "00206010C00AC00A"
+
+
+Signal_1:
+  name: "Brake Pedal Position"
+  size: 12
+  start_bit: 16
+  offset: -766
+  factor: .5
+  is_signed: False 
+  is_little_endian: False
+
+Signal_2:
+  name: "Wheel Rotation One"
+  size: 16
+  start_bit: 32
+  offset: -27
+  factor: .01
+  is_signed: False 
+  is_little_endian: True
+
+Signal_3:
+  name: "Wheel Rotation Two"
+  size: 16
+  start_bit: 48
+  offset: -27
+  factor: .01
+  is_signed: False 
+  is_little_endian: True
+

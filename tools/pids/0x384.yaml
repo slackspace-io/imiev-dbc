@@ -1,0 +1,36 @@
+
+
+
+Frame: 
+ name: "0x384"
+ arbitration_id: 0x384
+ comment: "Heating and Cooling"
+ test_frame: 
+  - "07E1115100545503"
+  - "0958175D00505003"
+
+Signal_1:
+  name: "AC (A)"
+  size: 16
+  start_bit: 0
+  factor: .001
+  unit: "Amps"
+  is_signed: False
+  is_little_endian: False
+
+Signal_2:
+  name: "Charging 12v Battery (A)"
+  size: 8
+  start_bit: 24
+  factor: .01
+  unit: "Amps"
+  is_signed: False
+
+Signal_3:
+  name: "Heating (A)"
+  size: 8
+  start_bit: 32
+  factor: .1
+  unit: "Amps"
+  is_signed: False
+

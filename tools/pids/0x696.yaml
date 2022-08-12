@@ -1,0 +1,29 @@
+
+
+
+Frame: 
+ name: "0x696"
+ arbitration_id: 0x696
+ comment: "Motor Current and Regen Amps"
+ test_frame: 
+  - "0499024A080226FB"
+
+Signal_1:
+  name: "Motor Current Amps"
+  size: 16
+  start_bit: 16
+  offset: -25
+  factor: .05
+  unit: "Amps"
+  is_signed: False
+  is_little_endian: False
+
+
+Signal_2:
+  name: "Regen Amps"
+  size: 15
+  start_bit: 48
+  offset: -553
+  factor: .11
+  unit: "Amps"
+  is_little_endian: False

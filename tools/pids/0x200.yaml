@@ -1,0 +1,28 @@
+
+
+
+Frame: 
+ arbitration_id: 0x200
+ name: "0x200"
+ comment: "Wheel Rotation"
+ size: 8
+ test_frame: 
+  - "0003C0E3C0E5FFFF"
+
+
+Signal_1:
+  name: "Wheel Rotation One"
+  size: 12
+  start_bit: 15
+  offset: -1209
+  factor: .34
+  is_signed: False 
+  is_little_endian: False
+
+Signal_2:
+  name: "Wheel Rotation Two"
+  size: 14
+  start_bit: 25
+  offset: -71
+  factor: .01
+  is_signed: False 

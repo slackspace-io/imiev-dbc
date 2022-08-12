@@ -1,0 +1,97 @@
+
+
+
+Frame: 
+ arbitration_id: 0x424
+ name: "0x424"
+ comment: "Car Lights and Locks Status"
+ size: 8
+ test_frame: 
+ - "03020C00BBFE01FF"
+ - "07600C00BBFD03FF"
+ - "40000000BBEB01FF"
+
+Signal_1:
+  name: "Automatic Light"
+  size: 1
+  start_bit: 2
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_2:
+  name: "Fog Lights"
+  size: 1
+  start_bit: 3
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_3:
+  name: "Rear Fog Light"
+  size: 1
+  start_bit: 4
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_4:
+  name: "Hazard Lights"
+  size: 1
+  start_bit: 8
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_5:
+  name: "Right Blinker"
+  size: 1
+  start_bit: 9
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_6:
+  name: "High Beams"
+  size: 1
+  start_bit: 10
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_7:
+  name: "Rear Wiper"
+  size: 1
+  start_bit: 11
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_8:
+  name: "Night Headlights"
+  size: 1
+  start_bit: 12
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_9:
+  name: "Sidelights"
+  size: 1
+  start_bit: 13
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+
+Signal_10:
+  name: "All doors Unlocked"
+  size: 1
+  start_bit: 16
+  status: {1: "Unlocked", 0: "Locked"}
+  is_signed: False
+
+Signal_10:
+  name: "Driver Door Unlocked"
+  size: 1
+  start_bit: 17
+  status: {1: "Unlocked", 0: "Locked"}
+  is_signed: False
+
+Signal_11:
+  name: "Driver Door Unlocked"
+  size: 1
+  start_bit: 51
+  status: {1: "On", 0: "Off"}
+  is_signed: False
+

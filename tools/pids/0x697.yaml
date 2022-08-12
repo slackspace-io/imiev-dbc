@@ -1,0 +1,27 @@
+
+
+
+Frame: 
+ name: "0x697"
+ arbitration_id: 0x697
+ comment: "Chademo"
+ test_frame: 
+  - "0165350172593400"
+
+Signal_1:
+  name: "Chademo Connected"
+  size: 8
+  start_bit: 0
+
+
+Signal_2:
+  name: "Chademo Charge %"
+  size: 8
+  start_bit: 8
+  unit: "Percentage"
+
+Signal_3:
+  name: "Chademo Current"
+  size: 8
+  start_bit: 16
+  unit: "AMPs"

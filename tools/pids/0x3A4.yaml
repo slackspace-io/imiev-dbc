@@ -1,0 +1,68 @@
+
+
+
+Frame: 
+ arbitration_id: 0x3A4
+ name: "0x3A4"
+ comment: "Climate Console"
+ size: 8
+ test_frame: 
+ - "6D78BCA9D48B0000"
+ - "E119C0B875500000"
+ - "0EF0FFFFFFFF0000"
+ - "C112C5B772550000"
+
+Signal_1:
+  name: "Heating Level"
+  size: 3
+  start_bit: 0
+  unit: "Status"
+  values: {15: "Heat", 14: "Heat", 13: "Heat", 12: "Heat", 11: "Heat", 10: "Heat", 9: "Heat", 8: "Heat",  7: "Off", 6: "Cooling", 5: "Cooling", 4: "Cooling", 3: "Cooling", 2: "Cooling", 1: "Cooling", 0: "Cooling"}
+  is_little_endian: False
+  is_signed: False
+  
+Signal_2:
+  name: "MAX Button"
+  size: 1
+  start_bit: 5
+  unit: "Status"
+  values: {1: "MAX On", 0: "MAX Off"}
+  is_little_endian: False
+  is_signed: False
+  
+Signal_3:
+  name: "Recirculation Button"
+  size: 1
+  start_bit: 6
+  unit: "Status"
+  values: {1: "Recirculation On", 0: "Recirculation Off"}
+  is_little_endian: False
+  is_signed: False
+  
+Signal_4:
+  name: "AC Button"
+  size: 1
+  start_bit: 7
+  unit: "Status"
+  values: {1: "A/C On", 0: "A/C Off"}
+  is_little_endian: False
+  is_signed: False
+  
+Signal_5:
+  name: "Fan Speed"
+  size: 3
+  start_bit: 8
+  factor: 12.5
+  unit: "Fan Speed"
+  is_little_endian: False
+  is_signed: False
+  
+Signal_6:
+  name: "Vent Direction"
+  size: 4
+  start_bit: 12
+  unit: "Vent Direction"
+  values: {9: "Windshield", 8: "Windshield", 7: "Windshield", 6: "Legs + Windshield", 5: "Legs", 4: "Legs", 3: "Legs + Face", 2: "Face", 1: "Face"}
+  is_little_endian: False
+  is_signed: False
+  

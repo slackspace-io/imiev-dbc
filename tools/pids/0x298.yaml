@@ -2,8 +2,8 @@
 
 
 Frame: 
- arbitration_id: 0x239
- name: "0x239"
+ arbitration_id: 0x298
+ name: "0x298"
  comment: "Motor RPM and Temp"
  size: 8
  test_frame: 

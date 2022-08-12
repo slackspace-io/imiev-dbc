@@ -1,0 +1,24 @@
+
+
+
+Frame: 
+ arbitration_id: 0x418
+ name: "0x418"
+ comment: "Gear Shift Selection"
+ size: 7
+ test_frame: 
+ - "44000000000000"
+ - "4E000000000000"
+ - "50000000000000"
+ - "52000000000000"
+ - "83000000000000"
+ - "FF000000000000"
+
+
+Signal_1:
+  name: "Gear Shift Selection"
+  size: 8
+  start_bit: 0
+  status: {255: "Key Off", 131: "B", 82: "Reverse", 80: "Park", 78: "Neutral", 68: "Drive", 50: "C"}
+  is_signed: False
+

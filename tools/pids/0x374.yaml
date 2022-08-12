@@ -1,0 +1,45 @@
+
+
+
+Frame: 
+ name: "0x374"
+ arbitration_id: 0x374
+ comment: "Battery SOC"
+ test_frame: 
+  - "B0B300004A483D00"
+  - "8E9100004B4A3D00"
+
+Signal_1:
+  name: "Battery SOC"
+  size: 15
+  start_bit: 0
+  offset: -1056
+  factor: .25
+  unit: "%"
+  is_signed: False
+
+Signal_2:
+  name: "Batter Max Temp"
+  size: 8
+  start_bit: 32
+  offset: -50
+  unit: "C"
+
+Signal_3:
+  name: "Battery Min Temp"
+  size: 8
+  start_bit: 40
+  offset: -50
+  unit: "C"
+
+Signal_4:
+  name: "Battery 100% Capacity (Ah)"
+  size: 8
+  start_bit: 48
+  factor: .5
+  unit: "Ah"
+
+
+
+
+
