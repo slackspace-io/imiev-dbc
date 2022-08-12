@@ -1,0 +1,13 @@
+These scripts are not polished, and just helper scripts to create the .dbc file.
+
+genDbc.py - Expect to be ran from within tools/ and will create an imiev.dbc file in the same directory. Optionally you can pass the first part of a yaml configuration as $1 to only process that yaml. 
+To creaete an entire .dbc from all yamls under pids/
+python genDbc.py
+To process only pids/0x101.yaml
+python genDbc.py 0x101
+
+
+findNum.py is a hack script to try and 'find' the correct start_bit, size, offset, scale, and endian-ness based on the expected result. Primarily from by hand solving the expressions on the common github for i-miev PIDs or OVMS source code, then configuring this script to try and find a DBC compatible set of options to return the same result. These pids need more testing and verification to ensure the new method is consistent.  This is a brute force, single threaded, nested for loop nightmare. Mainly checking it in so I can continue this work on my other computers when traveling. 
+
+
+The only deliverable in this repo is meant to be the imiev.dbc in the root folder, the rest is either tools to create the DBC, notes, or helper scripts.
